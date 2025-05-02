@@ -1,4 +1,5 @@
 import Image from "next/image"
+import ButtonShopNow from "./ButtonShopNow"
 
 export function NewCollections() {
     return (
@@ -32,9 +33,7 @@ export function NewCollections() {
                         New Collection
                     </p>
 
-                    <button className="bg-black text-white px-6 py-3 rounded-md transition">
-                        SHOP NOW
-                    </button>
+                    <ButtonShopNow />
                 </div>
                 <Image
                     src="/images/bottom_girls.png"

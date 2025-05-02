@@ -1,0 +1,1 @@
+export { NewCollections } from "./NewCollections"

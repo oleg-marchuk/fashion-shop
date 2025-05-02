@@ -1,1 +1,1 @@
-export { NewCollections } from "./newCollections"
+export { NewCollections } from "./new-collections"
