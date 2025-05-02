@@ -3,54 +3,91 @@ import ButtonShopNow from "./ButtonShopNow"
 
 export function NewCollections() {
     return (
-        <section className="flex justify-between mx-auto max-w-[1280px] my-8">
-            <Image
-                src="/images/left_man.png"
-                alt="left man"
-                width={392}
-                height={756}
-                className="rounded-lg object-cover"
-            />
-
-            <div className="flex flex-col justify-between">
+        <section className="my-8 mx-auto max-w-[1280px]">
+            <div className="flex justify-between">
                 <Image
-                    src="/images/top_girls.png"
-                    alt="top girls"
-                    width={426}
-                    height={150}
+                    src="/images/left_man.png"
+                    alt="left man"
+                    width={392}
+                    height={756}
                     className="rounded-lg object-cover"
                 />
-                <div className="text-center flex flex-col items-center">
-                    <h2 className="text-[96px] font-medium uppercase tracking-tight text-neutral-600">
-                        ULTIMATE
-                    </h2>
+                <div className="flex flex-col justify-between">
+                    <Image
+                        src="/images/top_girls.png"
+                        alt="top girls"
+                        width={426}
+                        height={150}
+                        className="rounded-lg object-cover"
+                    />
+                    <div className="text-center flex flex-col items-center">
+                        <h2 className="text-[96px] font-medium uppercase tracking-tight text-neutral-600">
+                            ULTIMATE
+                        </h2>
 
-                    <h1 className="text-[179px] font-extrabold uppercase leading-none text-white [-webkit-text-stroke:_2px_#4B5563] md:[-webkit-text-stroke:_3px_#4B5563]">
-                        SALE
-                    </h1>
+                        <h1 className="text-[179px] font-extrabold uppercase leading-none text-white [-webkit-text-stroke:_2px_#4B5563] md:[-webkit-text-stroke:_3px_#4B5563]">
+                            SALE
+                        </h1>
 
-                    <p className="text-[20px] text-muted-foreground tracking-widest uppercase mb-6">
-                        New Collection
-                    </p>
+                        <p className="text-[20px] text-muted-foreground tracking-widest uppercase mb-6">
+                            New Collection
+                        </p>
 
-                    <ButtonShopNow />
+                        <ButtonShopNow />
+                    </div>
+                    <Image
+                        src="/images/bottom_girls.png"
+                        alt="bottom girls"
+                        width={426}
+                        height={150}
+                        className="rounded-lg object-cover"
+                    />
                 </div>
                 <Image
-                    src="/images/bottom_girls.png"
-                    alt="bottom girls"
-                    width={426}
-                    height={150}
+                    src="/images/right_man.png"
+                    alt="right man"
+                    width={392}
+                    height={756}
                     className="rounded-lg object-cover"
                 />
             </div>
-
-            <Image
-                src="/images/right_man.png"
-                alt="right man"
-                width={392}
-                height={756}
-                className="rounded-lg object-cover"
-            />
+            <div className="flex justify-between items-center my-20">
+                <Image
+                    src="/images/logo-1.png"
+                    alt="logo-1"
+                    width={196}
+                    height={33}
+                    className="h-[33px] w-[196px] object-contain"
+                />
+                <Image
+                    src="/images/logo-2.png"
+                    alt="logo-2"
+                    width={196}
+                    height={15}
+                    className="h-[25px] w-[196px] object-contain"
+                />
+                <Image
+                    src="/images/logo-3.png"
+                    alt="logo-3"
+                    width={196}
+                    height={32}
+                    className="h-[32px] w-[196px] object-contain"
+                />
+                <Image
+                    src="/images/logo-4.png"
+                    alt="logo-4"
+                    width={196}
+                    height={33}
+                    className="h-[33px] w-[196px] object-contain"
+                />
+                <Image
+                    src="/images/logo-5.png"
+                    alt="logo-5"
+                    width={184}
+                    height={27}
+                    className="h-[27px] w-[184px] object-contain"
+                />
+            </div>
         </section>
     )
 }
