@@ -1,5 +1,5 @@
 "use client"
-import { Text, Button } from "@/components/ui"
+import { Button } from "@/components/ui"
 import { NavigationMenu } from "@/components/navigation/NavigationMenu"
 import { useScrollSpy } from "@/hooks/useScrollSpy"
 
@@ -16,13 +16,13 @@ export function Header() {
     const activeSection = useScrollSpy(sectionIds, 100)
 
     const isLoggedIn = false
-
+    // bg-white bg-cyan-500
     return (
-        <header className="flex items-center justify-between py-4 sticky top-0 z-50 bg-white shadow max-w-[1280px] mx-auto">
+        <header className="flex items-center justify-between py-4 sticky top-0 z-50 shadow max-w-[1280px] mx-auto bg-white">
             <div className="flex items-center">
-                <Text as="span" styleVariant="large">
+                <span className="text-base leading-6 text-[52px] font-medium neutral-800">
                     FASCO
-                </Text>
+                </span>
             </div>
             <div className="flex items-center justify-between gap-8">
                 <NavigationMenu
@@ -35,7 +35,7 @@ export function Header() {
                         <ProfileDropdown /> */}
                     </div>
                 ) : (
-                    <Button variant="default">Sign Up</Button>
+                    <Button>Sign Up</Button>
                 )}
             </div>
         </header>

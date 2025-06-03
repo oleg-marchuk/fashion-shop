@@ -11,6 +11,7 @@ export function NewCollections() {
                     width={392}
                     height={756}
                     className="rounded-lg object-cover"
+                    priority
                 />
                 <div className="flex flex-col justify-between">
                     <Image
@@ -21,12 +22,14 @@ export function NewCollections() {
                         className="rounded-lg object-cover"
                     />
                     <div className="text-center flex flex-col items-center">
-                        <h2 className="text-[96px] font-medium uppercase tracking-tight text-neutral-600">
-                            ULTIMATE
-                        </h2>
-
-                        <h1 className="text-[179px] font-extrabold uppercase leading-none text-white [-webkit-text-stroke:_2px_#4B5563] md:[-webkit-text-stroke:_3px_#4B5563]">
-                            SALE
+                        
+                        <h1 className="text-center">
+                            <span className="block text-[96px] font-medium text-neutral-600 uppercase tracking-tight">
+                                ULTIMATE
+                            </span>
+                            <span className="block text-[179px] text-white uppercase leading-none [-webkit-text-stroke:_2px_#4B5563] md:[-webkit-text-stroke:_3px_#4B5563] font-extrabold">
+                                SALE
+                            </span>
                         </h1>
 
                         <p className="text-[20px] text-muted-foreground tracking-widest uppercase mb-6">
@@ -49,6 +52,7 @@ export function NewCollections() {
                     width={392}
                     height={756}
                     className="rounded-lg object-cover"
+                    priority
                 />
             </div>
             <div className="flex justify-between items-center my-20">
@@ -63,7 +67,7 @@ export function NewCollections() {
                     src="/images/logo-2.png"
                     alt="logo-2"
                     width={196}
-                    height={15}
+                    height={25}
                     className="h-[25px] w-[196px] object-contain"
                 />
                 <Image
