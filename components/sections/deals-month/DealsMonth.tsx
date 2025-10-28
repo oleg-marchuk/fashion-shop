@@ -4,8 +4,8 @@ import { SliderPhoto } from "./slider-photo"
 
 export function DealsMonth() {
     return (
-        <section className="relative">
-            <div className="flex my-8 mx-auto max-w-[1280px]">
+        <section className="relative py-8 mb-[275px]">
+            <div className="flex my-8 mx-auto max-w-7xl">
                 <div className="min-w-[444px]">
                     <h4 className="text-[46px] text-neutral-700">
                         Deals of the month
@@ -21,7 +21,7 @@ export function DealsMonth() {
                     <h5 className="text-[28px] text-neutral-600 mt-13">
                         Hurry, Before It`s Too Late!
                     </h5>
-                    <CountdownTimer targetDate={"2025-07-10T00:00:00"} />
+                    <CountdownTimer targetDate={"2028-07-10T00:00:00"} />
                 </div>
 
                 <div className="ml-[125px] w-full">

@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from "react"
+import { useState } from "react"
 import Countdown, { CountdownRenderProps } from "react-countdown"
 import { Number } from "./Number"
 
@@ -8,11 +8,7 @@ interface CountdownTimerProps {
 }
 
 export function CountdownTimer({ targetDate }: CountdownTimerProps) {
-    const [isClient, setIsClient] = useState(false)
-
-    useEffect(() => {
-        setIsClient(true)
-    }, [])
+    const [isClient] = useState(true)
 
     const renderer = ({
         days,
@@ -40,9 +36,5 @@ export function CountdownTimer({ targetDate }: CountdownTimerProps) {
         )
     }
 
-    return isClient ? (
-        <Countdown date={targetDate} renderer={renderer} />
-    ) : (
-        <div className="h-[60px] bg-gray-900 rounded-lg" aria-hidden="true" />
-    )
+    return isClient && <Countdown date={targetDate} renderer={renderer} />
 }
