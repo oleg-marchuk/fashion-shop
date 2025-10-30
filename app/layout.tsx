@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Poppins, Geist_Mono } from "next/font/google"
-import localFont from "next/font/local"
+import { dsDGFont } from "@/lib/fonts"
 import "./globals.css"
 
 const poppinsSans = Poppins({
@@ -8,13 +8,6 @@ const poppinsSans = Poppins({
     style: ["normal"],
     subsets: ["latin"],
     variable: "--font-poppins",
-})
-
-const dsDigi = localFont({
-    src: "../fonts/DS-DIGI.woff2",
-    weight: "400",
-    style: "normal",
-    variable: "--font-ds-digi",
 })
 
 const geistMono = Geist_Mono({
@@ -35,7 +28,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${poppinsSans.className} ${dsDigi.variable} ${geistMono.variable} antialiased`}
+                className={`${poppinsSans.className} ${geistMono.variable} ${dsDGFont.variable} antialiased`}
             >
                 {children}
             </body>

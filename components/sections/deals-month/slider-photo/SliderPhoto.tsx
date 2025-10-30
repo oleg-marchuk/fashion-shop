@@ -9,7 +9,6 @@ import {
     type CarouselApi,
 } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
-import React from "react"
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Minus } from "lucide-react"
@@ -57,14 +56,14 @@ export function SliderPhoto() {
             opts={{ align: "start", loop: true }}
             className="w-full"
         >
-            <CarouselContent className="-ml-0 flex">
+            <CarouselContent className="ml-0 flex">
                 {CLOTHING.map((items, i) => {
                     const isActive = i === selectedIndex
                     return (
                         <CarouselItem
                             key={i}
                             className={cn(
-                                "flex-shrink-0",
+                                "shrink-0",
                                 isActive
                                     ? "basis-[404px] h-[582px]"
                                     : "basis-[372px] h-[486px]"
