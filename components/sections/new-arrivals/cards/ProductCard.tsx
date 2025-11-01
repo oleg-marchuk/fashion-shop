@@ -1,9 +1,6 @@
-// src/components/ui/product-card.tsx
-
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Star } from "lucide-react"
+import Image from "next/image"
 
-// Типи для пропсів компонента
 interface ProductCardProps {
     imageUrl: string
     title: string
@@ -26,52 +23,55 @@ export function ProductCard({
     statusColor = "text-red-500",
 }: ProductCardProps) {
     return (
-        <Card className="w-full max-w-sm overflow-hidden rounded-xl border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
-            {/* Верхня секція: Фото */}
-            <CardHeader className="">
-                <div className="aspect-[4/3] overflow-hidden">
-                    <img
-                        src={imageUrl}
-                        alt={title}
-                        className="w-full h-full object-cover"
-                    />
-                </div>
-            </CardHeader>
+        <div className="w-full max-w-sm overflow-hidden rounded-xl border bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col pt-4 px-6 pb-9">
+            <div className="aspect-4/3 overflow-hidden rounded-md">
+                <Image
+                    src={imageUrl}
+                    alt={title}
+                    width={426}
+                    height={150}
+                    className="w-full h-full object-cover"
+                />
+            </div>
 
-            {/* Середня секція: Назва, бренд, відгуки */}
-            <CardContent className="pt-[15px] px-[25px] flex-grow">
-                <div className="flex justify-between items-start mb-2">
-                    <div className="flex flex-col items-start">
-                        <h3 className="text-lg font-semibold leading-tight">
-                            {title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">{brand}</p>
+            <div className="flex flex-col grow mt-2">
+                <div className="pt-[15px] grow">
+                    <div className="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 className="text-xl font-semibold leading-tight text-gray-600">
+                                {title}
+                            </h3>
+                            <p className="text-left text-xs text-gray-500">
+                                {brand}
+                            </p>
+                        </div>
+                        <div className="flex items-center gap-0.5 mt-1 shrink-0">
+                            {[...Array(5)].map((_, i) => (
+                                <Star
+                                    key={i}
+                                    className={`h-5 w-5 ${
+                                        i < Math.round(rating)
+                                            ? "text-yellow-400 fill-yellow-400"
+                                            : "text-gray-300"
+                                    }`}
+                                />
+                            ))}
+                        </div>
                     </div>
-                    <div className="flex items-center gap-0.5 mt-1 flex-shrink-0">
-                        {[...Array(5)].map((_, i) => (
-                            <Star
-                                key={i}
-                                className={`h-5 w-5 ${
-                                    i < Math.round(rating)
-                                        ? "text-yellow-400 fill-yellow-400"
-                                        : "text-gray-300"
-                                }`}
-                            />
-                        ))}
-                    </div>
+                    <p className="text-xs text-gray-600 text-left mt-6">
+                        {reviews} Customer Reviews
+                    </p>
                 </div>
-                <p className="text-sm text-muted-foreground text-left">
-                    {reviews} Customer Reviews
-                </p>
-            </CardContent>
 
-            {/* Нижня секція: Ціна та статус */}
-            <CardFooter className="px-[25px] pb-[36px] pt-4 flex justify-between items-center">
-                <p className="text-2xl font-bold">{price}</p>
-                <p className={`text-sm font-medium ${statusColor}`}>
-                    {statusText}
-                </p>
-            </CardFooter>
-        </Card>
+                <div className="flex justify-between items-center pt-4">
+                    <p className="text-xl font-semibold leading-tight text-gray-600">
+                        {price}
+                    </p>
+                    <p className={`text-xs font-medium ${statusColor}`}>
+                        {statusText}
+                    </p>
+                </div>
+            </div>
+        </div>
     )
 }
