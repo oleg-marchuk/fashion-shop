@@ -15,7 +15,7 @@ export function DealsMonth() {
                         Scelerisque duis ultrices sollicitudin aliquam sem.
                         Scelerisque duis ultrices sollicitudin
                     </p>
-                    <Button size="lg" className="mt-10">
+                    <Button size="lg" className="mt-10 font-normal">
                         Buy Now
                     </Button>
                     <h5 className="text-[28px] text-neutral-600 mt-13">

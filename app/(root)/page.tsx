@@ -1,4 +1,9 @@
-import { NewCollections, DealsMonth, NewArrivals } from "@/components/sections"
+import {
+    NewCollections,
+    DealsMonth,
+    NewArrivals,
+    WomenCollection,
+} from "@/components/sections"
 // import Test from "@/components/sections/test"
 
 export default function Home() {
@@ -7,6 +12,7 @@ export default function Home() {
             <NewCollections />
             <DealsMonth />
             <NewArrivals />
+            <WomenCollection />
             {/* <Test /> */}
             <section className="h-[400px]"></section>
         </div>

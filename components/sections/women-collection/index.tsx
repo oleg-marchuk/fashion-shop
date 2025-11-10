@@ -1,0 +1,1 @@
+export { WomenCollection } from "./WomenCollection"
