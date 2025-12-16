@@ -7,7 +7,7 @@ const navItems = [
     { label: "Home", href: "#home" },
     { label: "Deals", href: "#deals" },
     { label: "New Arrivals", href: "#new-arrivals" },
-    { label: "Packages", href: "#packages" },
+    { label: "Shop", href: "/shop" },
     { label: "Sign In", href: "/sign-in", external: true },
 ]
 
@@ -18,7 +18,7 @@ export function Header() {
     const isLoggedIn = false
     // bg-white bg-cyan-500
     return (
-        <header className="flex items-center justify-between py-4 sticky top-0 z-50 shadow max-w-[1280px] mx-auto bg-white">
+        <header className="flex items-center justify-between py-4 sticky top-0 z-50 shadow max-w-7xl mx-auto bg-white">
             <div className="flex items-center">
                 <span className="text-base leading-6 text-[52px] font-medium neutral-800">
                     FASCO
