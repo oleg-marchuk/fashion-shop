@@ -16,7 +16,7 @@ export function Tags() {
     ]
 
     return (
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
             {tags.map((tag) => (
                 <LinkItem key={tag.id} text={tag.text} href={tag.href} />
             ))}

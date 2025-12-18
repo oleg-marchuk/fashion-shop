@@ -11,7 +11,7 @@ export function Brands() {
     ]
 
     return (
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-wrap gap-3">
             {brands.map((brand) => (
                 <LinkItem key={brand.id} text={brand.text} href={brand.href} />
             ))}

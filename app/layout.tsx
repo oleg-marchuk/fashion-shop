@@ -1,19 +1,6 @@
 import type { Metadata } from "next"
-import { Poppins, Geist_Mono } from "next/font/google"
-import { dsDGFont } from "@/lib/fonts"
+import { poppinsSans, volkhovSans, geistMono, dsDGFont } from "@/lib/fonts"
 import "./globals.css"
-
-const poppinsSans = Poppins({
-    weight: ["300", "400", "500", "600", "700"],
-    style: ["normal"],
-    subsets: ["latin"],
-    variable: "--font-poppins",
-})
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-})
 
 export const metadata: Metadata = {
     title: "Fashion Shop",
@@ -28,7 +15,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${poppinsSans.className} ${geistMono.variable} ${dsDGFont.variable} antialiased`}
+                className={`${poppinsSans.className} ${volkhovSans.variable} ${geistMono.variable} ${dsDGFont.variable} antialiased`}
             >
                 {children}
             </body>
