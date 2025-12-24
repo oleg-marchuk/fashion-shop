@@ -1,7 +1,11 @@
+import { CardsToolbar } from "./cards-toolbar"
+import { Card } from "./card"
+
 export function Cards() {
     return (
         <div>
-            <h1>Cards</h1>
+            <CardsToolbar />
+            <Card />
         </div>
     )
 }
