@@ -1,6 +1,6 @@
 "use client"
-import { Button } from "@/components/ui"
 import { NavigationMenu } from "@/components/navigation/NavigationMenu"
+import Link from "next/link"
 import { useScrollSpy } from "@/hooks/useScrollSpy"
 
 const navItems = [
@@ -20,7 +20,7 @@ export function Header() {
     return (
         <header className="flex items-center justify-between py-4 sticky top-0 z-50 shadow max-w-7xl mx-auto bg-white">
             <div className="flex items-center">
-                <span className="text-base leading-6 text-[52px] font-medium neutral-800">
+                <span className="font-volkhov leading-6 text-[52px] font-medium neutral-800">
                     FASCO
                 </span>
             </div>
@@ -35,7 +35,14 @@ export function Header() {
                         <ProfileDropdown /> */}
                     </div>
                 ) : (
-                    <Button>Sign Up</Button>
+                    <Link
+                        href={"/sign-up"}
+                        className={
+                            "px-11 py-4 relative text-sm font-medium transition-colors hover:text-gray-200 bg-primary text-white rounded-lg"
+                        }
+                    >
+                        Sign Up
+                    </Link>
                 )}
             </div>
         </header>
