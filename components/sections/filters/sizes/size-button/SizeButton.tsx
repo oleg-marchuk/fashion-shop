@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { FilterOptionWithoutId } from "@/types/filters"
+import { FilterOptionWithoutIdValue } from "@/types/filters"
 
-export const SizeButton = ({ text, href, isActive }: FilterOptionWithoutId) => (
+export const SizeButton = ({ text, href, isActive }: FilterOptionWithoutIdValue) => (
     <Link
         href={href}
         className={`

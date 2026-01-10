@@ -19,7 +19,7 @@ export async function Filters() {
             <h3 className="font-volkhov mb-4">Size</h3>
             <Sizes sizes={sizes} />
             <h3 className="font-volkhov text-lg mt-8 mb-4">Colors</h3>
-            <Colors />
+            <Colors colors={colors} />
             <h3 className="font-volkhov text-lg mt-8 mb-4">Prices</h3>
             <Prices />
             <h3 className="font-volkhov text-lg mt-8 mb-4">Brands</h3>

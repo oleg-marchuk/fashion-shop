@@ -1,15 +1,24 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import {
+    ColorOption,
+    FilterOption,
+    FilterItemState,
+    FilterOptionWithoutValue,
+    ColorOptionWithoutName,
+} from "@/types/filters"
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs))
 }
 
+const pathname = "/shop"
+
 export const createFilterUrl = (
     key: string,
     value: string,
     currentParams?: URLSearchParams
-) => {
+): string => {
     const params = new URLSearchParams(currentParams?.toString())
     const lowerValue = value.toLowerCase()
 
@@ -35,5 +44,72 @@ export const createFilterUrl = (
 
     const queryString = decodeURIComponent(params.toString())
 
-    return `/shop?${queryString}`
+    return `${pathname}?${queryString}`
+}
+
+export const getSelectedValues = (
+    key: string,
+    searchParams: URLSearchParams
+): string[] => {
+    return searchParams.get(key)?.split(",") || []
+}
+
+export const getFilterItemProps = (
+    key: string,
+    value: string,
+    searchParams: URLSearchParams,
+    selectedValues: string[]
+): FilterItemState => {
+    const lowerValue = value.toLowerCase()
+    const href = createFilterUrl(key, lowerValue, searchParams)
+    const isActive = selectedValues.includes(lowerValue)
+
+    return {
+        href,
+        isActive,
+    }
+}
+
+export const getListItem = ({
+    key,
+    list,
+    searchParams,
+}: {
+    key: string
+    list: FilterOption[]
+    searchParams: URLSearchParams
+}): FilterOptionWithoutValue[] => {
+    const selectedItems = getSelectedValues(key, searchParams)
+
+    return list.map((item: FilterOption) => {
+        const { href, isActive } = getFilterItemProps(
+            key,
+            item.value,
+            searchParams,
+            selectedItems
+        )
+        return { id: item.id, text: item.text, href, isActive }
+    })
+}
+
+export const getColorsListItem = ({
+    key,
+    list,
+    searchParams,
+}: {
+    key: string
+    list: ColorOption[]
+    searchParams: URLSearchParams
+}): ColorOptionWithoutName[] => {
+    const selectedItems = getSelectedValues(key, searchParams)
+
+    return list.map((item: ColorOption) => {
+        const { href, isActive } = getFilterItemProps(
+            key,
+            item.name,
+            searchParams,
+            selectedItems
+        )
+        return { id: item.id, color: item.color, href, isActive }
+    })
 }

@@ -4,16 +4,27 @@ export interface FilterOption {
     value: string
 }
 
-export type FilterOptionWithoutId = Omit<FilterOption, "id" | "value"> & {
+export interface FilterItemState {
     href: string
     isActive: boolean
 }
+
+export type FilterOptionWithoutIdValue = Omit<FilterOption, "id" | "value"> &
+    FilterItemState
+
+export type FilterOptionWithoutValue = Omit<FilterOption, "value"> &
+    FilterItemState
 
 export interface ColorOption {
     id: number
     color: string
     name: string
 }
+
+export type ColorOptionWithoutId = Omit<ColorOption, "id" | "name"> &
+    FilterItemState
+
+export type ColorOptionWithoutName = Omit<ColorOption, "name"> & FilterItemState
 
 export interface FiltersData {
     sizes: FilterOption[]
