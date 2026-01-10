@@ -1,19 +1,27 @@
+"use client"
+import { FilterLink, FilterOption } from "@/types/filtersType"
 import { LinkItem } from "../link-item"
+import { useSearchParams } from "next/navigation"
+import { getListItem } from "@/lib/utils"
 
-export function Brands() {
-    const brands = [
-        { id: 1, text: "Minimog", href: "/shop?brand=minimog" },
-        { id: 2, text: "Retrolie", href: "/shop?brand=retrolie" },
-        { id: 3, text: "Brook", href: "/shop?brand=brook" },
-        { id: 4, text: "Learts", href: "/shop?brand=learts" },
-        { id: 5, text: "Vagabond", href: "/shop?brand=vagabond" },
-        { id: 6, text: "Abby", href: "/shop?brand=abby" },
-    ]
+export function Brands({ brands }: { brands: FilterOption[] }) {
+    const searchParams = useSearchParams()
+
+    const brandsList = getListItem({
+        key: "brand",
+        list: brands,
+        searchParams: searchParams,
+    })
 
     return (
         <div className="flex flex-wrap gap-3">
-            {brands.map((brand) => (
-                <LinkItem key={brand.id} text={brand.text} href={brand.href} />
+            {brandsList.map(({ id, text, href, isActive }: FilterLink) => (
+                <LinkItem
+                    key={id}
+                    text={text}
+                    href={href}
+                    isActive={isActive}
+                />
             ))}
         </div>
     )

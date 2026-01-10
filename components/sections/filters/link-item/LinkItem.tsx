@@ -1,12 +1,11 @@
 import Link from "next/link"
+import { FilterLinkText } from "@/types/filtersType"
 
-interface LinkItemProps {
-    text: string
-    href: string
-    isActive?: boolean
-}
-
-export function LinkItem({ text, href='', isActive = false }: LinkItemProps) {
+export function LinkItem({
+    text,
+    href = "",
+    isActive = false,
+}: FilterLinkText) {
     return (
         <Link
             href={href}

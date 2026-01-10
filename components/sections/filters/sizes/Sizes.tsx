@@ -1,6 +1,6 @@
 "use client"
 import { SizeButton } from "./size-button"
-import { FilterOption, FilterOptionWithoutValue } from "@/types/filters"
+import { FilterOption, FilterLink } from "@/types/filtersType"
 import { useSearchParams } from "next/navigation"
 import { getListItem } from "@/lib/utils"
 
@@ -16,7 +16,7 @@ export function Sizes({ sizes }: { sizes: FilterOption[] }) {
     return (
         <div className="flex gap-3">
             {sizesList.map(
-                ({ id, text, href, isActive }: FilterOptionWithoutValue) => (
+                ({ id, text, href, isActive }: FilterLink) => (
                     <SizeButton
                         key={id}
                         text={text}

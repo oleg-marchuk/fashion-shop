@@ -1,5 +1,5 @@
 import { fetcher } from "@/lib/api-config"
-import { AllFiltersResponse } from "@/types/filters"
+import { AllFiltersResponse } from "@/types/filtersType"
 
 export const filterService = {
     getFilters: async (): Promise<AllFiltersResponse> => {

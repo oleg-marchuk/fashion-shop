@@ -1,11 +1,11 @@
 import Link from "next/link"
-import { ColorOptionWithoutId } from "@/types/filters"
+import { FilterLinkColor } from "@/types/filtersType"
 
 export const ColorButton = ({
     color,
     href,
     isActive = false,
-}: ColorOptionWithoutId) => (
+}: FilterLinkColor) => (
     <Link
         href={href}
         className={`

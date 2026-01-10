@@ -4,9 +4,9 @@ import {
     ColorOption,
     FilterOption,
     FilterItemState,
-    FilterOptionWithoutValue,
-    ColorOptionWithoutName,
-} from "@/types/filters"
+    FilterLink,
+    ColorLink,
+} from "@/types/filtersType"
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs))
@@ -78,7 +78,7 @@ export const getListItem = ({
     key: string
     list: FilterOption[]
     searchParams: URLSearchParams
-}): FilterOptionWithoutValue[] => {
+}): FilterLink[] => {
     const selectedItems = getSelectedValues(key, searchParams)
 
     return list.map((item: FilterOption) => {
@@ -100,7 +100,7 @@ export const getColorsListItem = ({
     key: string
     list: ColorOption[]
     searchParams: URLSearchParams
-}): ColorOptionWithoutName[] => {
+}): ColorLink[] => {
     const selectedItems = getSelectedValues(key, searchParams)
 
     return list.map((item: ColorOption) => {

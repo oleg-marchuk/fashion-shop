@@ -1,18 +1,18 @@
+export interface FilterItemState {
+    href: string
+    isActive: boolean
+}
+
 export interface FilterOption {
     id: number
     text: string
     value: string
 }
 
-export interface FilterItemState {
-    href: string
-    isActive: boolean
-}
-
-export type FilterOptionWithoutIdValue = Omit<FilterOption, "id" | "value"> &
+export type FilterLinkText = Omit<FilterOption, "id" | "value"> &
     FilterItemState
 
-export type FilterOptionWithoutValue = Omit<FilterOption, "value"> &
+export type FilterLink = Omit<FilterOption, "value"> &
     FilterItemState
 
 export interface ColorOption {
@@ -21,10 +21,10 @@ export interface ColorOption {
     name: string
 }
 
-export type ColorOptionWithoutId = Omit<ColorOption, "id" | "name"> &
+export type FilterLinkColor = Omit<ColorOption, "id" | "name"> &
     FilterItemState
 
-export type ColorOptionWithoutName = Omit<ColorOption, "name"> & FilterItemState
+export type ColorLink = Omit<ColorOption, "name"> & FilterItemState
 
 export interface FiltersData {
     sizes: FilterOption[]
