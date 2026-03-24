@@ -17,7 +17,7 @@ const pathname = "/shop"
 export const createFilterUrl = (
     key: string,
     value: string,
-    currentParams?: URLSearchParams
+    currentParams?: URLSearchParams,
 ): string => {
     const params = new URLSearchParams(currentParams?.toString())
     const lowerValue = value.toLowerCase()
@@ -49,7 +49,7 @@ export const createFilterUrl = (
 
 export const getSelectedValues = (
     key: string,
-    searchParams: URLSearchParams
+    searchParams: URLSearchParams,
 ): string[] => {
     return searchParams.get(key)?.split(",") || []
 }
@@ -58,7 +58,7 @@ export const getFilterItemProps = (
     key: string,
     value: string,
     searchParams: URLSearchParams,
-    selectedValues: string[]
+    selectedValues: string[],
 ): FilterItemState => {
     const lowerValue = value.toLowerCase()
     const href = createFilterUrl(key, lowerValue, searchParams)
@@ -86,7 +86,7 @@ export const getListItem = ({
             key,
             item.value,
             searchParams,
-            selectedItems
+            selectedItems,
         )
         return { id: item.id, text: item.text, href, isActive }
     })
@@ -108,8 +108,8 @@ export const getColorsListItem = ({
             key,
             item.name,
             searchParams,
-            selectedItems
+            selectedItems,
         )
-        return { id: item.id, color: item.color, href, isActive }
+        return { id: item.id, hex_code: item.hex_code, href, isActive }
     })
 }

@@ -16,11 +16,11 @@ export function Colors({ colors }: { colors: ColorOption[] }) {
     return (
         <div className="flex flex-wrap gap-3">
             {colorsList.map(
-                ({ id, color, href, isActive }: ColorLink) => (
+                ({ id, hex_code, href, isActive }: ColorLink) => (
                     <ColorButton
                         key={id}
                         href={href}
-                        color={color}
+                        hex_code={hex_code}
                         isActive={isActive}
                     />
                 )

@@ -7,32 +7,37 @@ export interface FilterOption {
     id: number
     text: string
     value: string
+    order?: number
 }
 
-export type FilterLinkText = Omit<FilterOption, "id" | "value"> &
-    FilterItemState
-
-export type FilterLink = Omit<FilterOption, "value"> &
-    FilterItemState
+export interface PriceOption {
+    id: number
+    min_val: number
+    max_val: number
+    order: number
+}
 
 export interface ColorOption {
     id: number
-    color: string
+    hex_code: string
     name: string
 }
 
-export type FilterLinkColor = Omit<ColorOption, "id" | "name"> &
-    FilterItemState
+export type FilterLink = Omit<FilterOption, "value"> & FilterItemState
 
 export type ColorLink = Omit<ColorOption, "name"> & FilterItemState
 
+export type FilterColorLink = Omit<ColorOption, "id" | "name"> & FilterItemState
+
+export type PriceLink = PriceOption & FilterItemState & { label: string }
+
 export interface FiltersData {
+    categories: FilterOption[]
+    brands: FilterOption[]
+    collections: FilterOption[]
     sizes: FilterOption[]
     colors: ColorOption[]
     prices: FilterOption[]
-    brands: FilterOption[]
-    collections: FilterOption[]
-    tags: FilterOption[]
 }
 
 export interface AllFiltersResponse {

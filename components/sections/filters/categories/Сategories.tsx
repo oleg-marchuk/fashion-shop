@@ -4,18 +4,18 @@ import { LinkItem } from "../link-item"
 import { useSearchParams } from "next/navigation"
 import { getListItem } from "@/lib/utils"
 
-export function Tags({ tags }: { tags: FilterOption[] }) {
+export function Categories({ category }: { category: FilterOption[] }) {
     const searchParams = useSearchParams()
 
-    const tagsList = getListItem({
+    const categoryList = getListItem({
         key: "tag",
-        list: tags,
+        list: category,
         searchParams: searchParams,
     })
 
     return (
-        <div className="flex flex-wrap gap-3">
-            {tagsList.map(({ id, text, href, isActive }: FilterLink) => (
+        <div className="flex flex-col gap-1">
+            {categoryList.map(({ id, text, href, isActive }: FilterLink) => (
                 <LinkItem
                     key={id}
                     text={text}

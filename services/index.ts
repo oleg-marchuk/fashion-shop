@@ -1,1 +1,1 @@
-export { filterService } from "./filterService"
+export { getAllFilters } from "./filters"

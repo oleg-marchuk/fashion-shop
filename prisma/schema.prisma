@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id             Int     @id @default(autoincrement())
+  title          String
+  current_price  Int
+  discount_price Int?
+  is_sold_out    Boolean @default(false)
+
+  brand_id      Int
+  collection_id Int
+  category_id   Int
+
+  brand      Brand      @relation(fields: [brand_id], references: [id])
+  collection Collection @relation(fields: [collection_id], references: [id])
+  category   Category   @relation(fields: [category_id], references: [id])
+  sizes      Size[]
+
+  variants ProductVariant[]
+
+  @@map("products")
+}
+
+model ProductVariant {
+  id         Int @id @default(autoincrement())
+  product_id Int
+  color_id   Int
+
+  product Product @relation(fields: [product_id], references: [id])
+  color   Color   @relation(fields: [color_id], references: [id])
+
+  images ProductImage[]
+
+  @@map("product_variants")
+}
+
+model ProductImage {
+  id         Int    @id @default(autoincrement())
+  variant_id Int
+  name       String
+
+  variant ProductVariant @relation(fields: [variant_id], references: [id])
+
+  @@map("product_images")
+}
+
+model Size {
+  id    Int    @id @default(autoincrement())
+  text  String @unique
+  value String @unique
+  order Int    @default(0)
+
+  products Product[]
+
+  @@map("sizes")
+}
+
+model Price {
+  id      Int @id @default(autoincrement())
+  min_val Int
+  max_val Int
+  order   Int @default(0)
+
+  @@map("prices")
+}
+
+model Brand {
+  id       Int       @id @default(autoincrement())
+  text     String    @unique
+  value    String    @unique
+  products Product[]
+
+  @@map("brands")
+}
+
+model Collection {
+  id       Int       @id @default(autoincrement())
+  text     String    @unique
+  value    String    @unique
+  order    Int       @default(0)
+  products Product[]
+
+  @@map("collections")
+}
+
+model Color {
+  id       Int              @id @default(autoincrement())
+  hex_code String           @unique
+  name     String           @unique
+  variants ProductVariant[]
+
+  @@map("colors")
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  text     String    @unique
+  value    String    @unique
+  products Product[]
+
+  @@map("categories")
+}

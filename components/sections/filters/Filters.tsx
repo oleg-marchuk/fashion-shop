@@ -4,13 +4,13 @@ import { Colors } from "./colors"
 import { Prices } from "./prices"
 import { Brands } from "./brands"
 import { Collections } from "./collections"
-import { Tags } from "./tags"
-import { filterService } from "@/services"
+import { Categories } from "./categories"
+import { getAllFilters } from "@/services/filters"
 
 export async function Filters() {
-    const filters = await filterService.getFilters()
+    const filters = await getAllFilters()
 
-    const { sizes, colors, prices, brands, collections, tags } = filters.data
+    const { sizes, colors, prices, brands, collections, categories } = filters
 
     return (
         <div>
@@ -20,14 +20,14 @@ export async function Filters() {
                 <Sizes sizes={sizes} />
                 <h3 className="font-volkhov text-lg mt-8 mb-4">Colors</h3>
                 <Colors colors={colors} />
+                <h3 className="font-volkhov text-lg mt-8 mb-4">Categories</h3>
+                <Categories category={categories} />
                 <h3 className="font-volkhov text-lg mt-8 mb-4">Prices</h3>
                 <Prices prices={prices} />
                 <h3 className="font-volkhov text-lg mt-8 mb-4">Brands</h3>
                 <Brands brands={brands} />
                 <h3 className="font-volkhov text-lg mt-8 mb-4">Collections</h3>
                 <Collections collections={collections} />
-                <h3 className="font-volkhov text-lg mt-8 mb-4">Tags</h3>
-                <Tags tags={tags} />
             </Suspense>
         </div>
     )

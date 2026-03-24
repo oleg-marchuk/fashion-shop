@@ -1,0 +1,52 @@
+{
+    "size": [
+        { "text": "S", "value": "s", "order": 1 },
+        { "text": "M", "value": "m", "order": 2 },
+        { "text": "L", "value": "l", "order": 3 },
+        { "text": "XL", "value": "xl", "order": 4 }
+    ],
+    "color": [
+        { "hex_code": "#000000", "name": "black" },
+        { "hex_code": "#9A2325", "name": "red" },
+        { "hex_code": "#213927", "name": "green" },
+        { "hex_code": "#C4D0D7", "name": "blue" },
+        { "hex_code": "#E7D9C7", "name": "beige" },
+        { "hex_code": "#756354", "name": "brown" },
+        { "hex_code": "#CCCCCC", "name": "grey" },
+        { "hex_code": "#7E0B80", "name": "purple" },
+        { "hex_code": "#FFFFFF", "name": "white" },
+        { "hex_code": "#F0D2D7", "name": "pink" },
+        { "hex_code": "#E2D29A", "name": "yellow" }
+    ],
+    "price": [
+        { "min_val": 0, "max_val": 50, "order": 1 },
+        { "min_val": 50, "max_val": 100, "order": 2 },
+        { "min_val": 100, "max_val": 150, "order": 3 },
+        { "min_val": 150, "max_val": 200, "order": 4 },
+        { "min_val": 200, "max_val": 400, "order": 5 }
+    ],
+    "brand": [
+        { "text": "Minimog", "value": "minimog" },
+        { "text": "Retrolie", "value": "retrolie" },
+        { "text": "Brook", "value": "brook" },
+        { "text": "Learts", "value": "learts" },
+        { "text": "Vagabond", "value": "vagabond" },
+        { "text": "Abby", "value": "abby" }
+    ],
+    "collection": [
+        { "text": "Best sellers", "value": "best-sellers", "order": 1 },
+        { "text": "New arrivals", "value": "new-arrivals", "order": 2 },
+        { "text": "Accessories", "value": "accessories", "order": 3 }
+    ],
+    "category": [
+        { "text": "Brami Tops", "value": "brami-tops" },
+        { "text": "Shirts & Tops", "value": "shirts-and-tops" },
+        { "text": "Dresses", "value": "dresses" },
+        { "text": "Pants", "value": "pants" },
+        { "text": "Skirts", "value": "skirts" },
+        { "text": "Matching Sets", "value": "matching-sets" },
+        { "text": "Jackets & Coats", "value": "jackets-and-coats" },
+        { "text": "Tank Tops", "value": "tank-tops" },
+        { "text": "Cardigans", "value": "cardigans" }
+    ]
+}

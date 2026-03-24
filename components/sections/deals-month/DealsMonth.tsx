@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui"
-import { CountdownTimer } from "./countdown-timer"
+// import { CountdownTimer } from "./countdown-timer"
 import { SliderPhoto } from "./slider-photo"
+import { CountdownTimer } from "./countdown-timer"
 
 export function DealsMonth() {
     return (

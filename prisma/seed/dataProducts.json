@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Side Ruched High Tie Neck New Airy Brami Tank",
+    "current_price": 55,
+    "discount_price": 0,
+    "is_sold_out": false,
+    "brand": "minimog",
+    "category": "brami-tops",
+    "collection": "new-arrivals",
+    "sizes": ["s", "m", "l"],
+    "variants": [
+      {
+        "color_name": "red",
+        "images": [
+          { "name": "ruched high_1.webp" },
+          { "name": "ruched high_2.webp" }
+        ]
+      },
+      {
+        "color_name": "green",
+        "images": [
+          { "name": "ruched high_3.webp" },
+          { "name": "ruched high_4.webp" }
+        ]
+      }
+    ]
+  }
+]

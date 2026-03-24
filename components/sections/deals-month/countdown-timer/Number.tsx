@@ -13,3 +13,5 @@ export function Number({ number, text }: NumberProps) {
         </div>
     )
 }
+
+// suppressHydrationWarning
