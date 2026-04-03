@@ -1,11 +1,16 @@
 import { CardsToolbar } from "./cards-toolbar"
-import { Card } from "./card"
+import { CardContainer as Card } from "./card"
+import { getProducts } from "@/services"
 
-export function Cards() {
+export async function Cards() {
+    const products = await getProducts({})
+    
     return (
         <div>
             <CardsToolbar />
-            <Card />
+            {products.map((product) => (
+                <Card key={product.id} product={product} />
+            ))}
         </div>
     )
 }

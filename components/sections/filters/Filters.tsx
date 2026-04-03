@@ -5,7 +5,7 @@ import { Prices } from "./prices"
 import { Brands } from "./brands"
 import { Collections } from "./collections"
 import { Categories } from "./categories"
-import { getAllFilters } from "@/services/filters"
+import { getAllFilters } from "@/services"
 
 export async function Filters() {
     const filters = await getAllFilters()

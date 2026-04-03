@@ -12,15 +12,15 @@
       {
         "color_name": "red",
         "images": [
-          { "name": "ruched high_1.webp" },
-          { "name": "ruched high_2.webp" }
+          { "name": "side ruched high_1.webp" },
+          { "name": "side ruched high_2.webp" }
         ]
       },
       {
         "color_name": "green",
         "images": [
-          { "name": "ruched high_3.webp" },
-          { "name": "ruched high_4.webp" }
+          { "name": "side ruched high_3.webp" },
+          { "name": "side ruched high_4.webp" }
         ]
       }
     ]
